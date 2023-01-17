@@ -9,7 +9,6 @@ main.o: main.cpp
 0811549: main.o practice.o
 	g++ -o 0811549 main.o practice.o
 
-
 do:
 	./0811549 
 
