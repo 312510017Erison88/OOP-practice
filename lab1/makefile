@@ -10,7 +10,7 @@ main.o: main.cpp
 	g++ -o 0811549 main.o practice.o
 
 do:
-	./0811549 
+	./0811549 input1.in
 
 diff:
 	diff -w output1.out an1 > diff1
