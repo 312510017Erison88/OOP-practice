@@ -5,12 +5,15 @@ using namespace std;
 
 int main(){
     //declare a file name variable
-    ifstream input_file_var;
-    ofstream output_filename_var;
+    ifstream input;
+    ofstream output;
 
     //open the file
-    input_file_var.open("file_path/filename");
-    output_filename_var.open("file_path/filename");
+    input.open("input1.in");
+    cout << input.is_open() << endl; 
+    input.close();
+
+    //output.open("file_path/filename");
 
 
 
