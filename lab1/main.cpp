@@ -19,11 +19,11 @@ int main(int argc, char **argv){
     vector<string> input1;
     vector<vector<string> > matrix;
     char line[128];
-/*
+
     while(input_file.getline(line, sizeof(line), '\n')){
-        cout<<line<<endl;
+        input1.push_back(line);
     }
-*/
+
 
 /*
 vector<string> v;
@@ -39,11 +39,12 @@ vector<string> v;
         }
 */
 
-
+/*
     while(input_file>>str){
         cout << str << endl;
         input1.push_back(str);
-    } 
+    }
+*/ 
 
 //print Matrix
     for(int i=0; i<input1.size(); i++){
