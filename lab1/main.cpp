@@ -54,27 +54,27 @@ int main(int argc, char **argv){
 	
 	double tmp;
 	string tmp2;
-	for(int q= 4; q > 0; q--)
+	for(int q=4; q>0; q--)
 	{
-   		for(int j = 0; j <= q-1; j++)
+   		for(int j=0; j<=q-1; j++)
     		{	
-        		if(stAve[j] > stAve[j+1])
+        		if(stAve[j] < stAve[j+1])
         		{
-            			tmp =stAve[j];
-          	 		stAve[j] =stAve[j+1];
+                    //change average
+            		tmp = stAve[j];
+          	 		stAve[j] = stAve[j+1];
           	 		stAve[j+1] = tmp;
-			
-				tmp2 = n[j];
-				n[j] = n[j+1];
-				n[j+1] = tmp2;
+                    //change name
+                    tmp2 = n[j];
+                    n[j] = n[j+1];
+                    n[j+1] = tmp2;
         		}	
     		}	
 	}	
 	output_file.open(argv[2], ios::out);
-	for(int k = 0; k<5;k++)
+	for(int k=0; k<5; k++)
 	{
-		
-		output_file << k+1<<"." << left << setw(11)  << n[k] << right << setw(2) << fixed 
+		output_file << k+1 <<"." << left << setw(11)  << n[k] << right << setw(2) << fixed 
 			   << setprecision(1) << stAve[k] << endl;
 	}	
     
@@ -86,19 +86,6 @@ int main(int argc, char **argv){
     }
 */
 
-/*
-vector<string> v;
-
-    while (1) {
-        v.push_back(s.substr(0, s.find(" "))); // 從第一個空白分割出左側子字串放入vector
-        s = s.substr(s.find(" ") + 1, s.length()); // 從第一個空白分割出右側子字串設為s
-
-        // 取得最後一個字。最後一個字找不到空白了
-        if (s.find(" ") == -1) {
-            v.push_back(s);
-            break;
-        }
-*/
 
 /*
     while(input_file>>str){
