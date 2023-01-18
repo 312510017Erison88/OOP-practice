@@ -40,17 +40,29 @@ int main(int argc, char **argv){
 	string n[5];
 	int grade[5][3];
 	double stAve[5];
+    //int **gradeptr;
+    //double *stAve;
 	while(input_file >> name)
 	{
 		n[i] = name;
 		input_file >> grade[i][0] >> grade[i][1] >> grade[i][2];
 		i++;
 	}
+
+/*
+    for(int k=0; k<5; k++){
+        for(int j=0; j<3; j++){
+            **gradeptr = grade[k][j];
+        }
+    }
+*/   
+
 	for(int r=0;r<5;r++)
 	{
 		stAve[r]=double((grade[r][0]+grade[r][1]+grade[r][2]))/3;
 	}
-
+    
+    //stAve = average (gradeptr);
 	
 	double tmp;
 	string tmp2;
@@ -78,21 +90,6 @@ int main(int argc, char **argv){
 			   << setprecision(1) << stAve[k] << endl;
 	}	
     
-
-/*
-    while(input_file.getline(line, sizeof(line), '\n')){
-        input1.push_back(line);
-    }
-*/
-
-
-/*
-    while(input_file>>str){
-        cout << str << endl;
-        input1.push_back(str);
-    }
-*/ 
-
 
 //check read to end of file
     if(input_file.eof())

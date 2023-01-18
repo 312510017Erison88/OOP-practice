@@ -6,3 +6,5 @@
 #include <stdlib.h>
 
 void testfunction (int function_parameter);
+
+double* average (int** grade);
