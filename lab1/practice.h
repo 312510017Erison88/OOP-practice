@@ -5,4 +5,4 @@
 #include <vector>
 #include <stdlib.h>
 
-void function (int function_parameter);
+void testfunction (int function_parameter);

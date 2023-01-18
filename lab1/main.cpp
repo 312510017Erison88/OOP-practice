@@ -16,10 +16,10 @@ int main(int argc, char **argv){
     input_file.open(argv[1], ios::in);
     cout << input_file.is_open() << endl;
     
-    string str;
-    vector<string> input1;
-    vector<vector<string> > matrix;
-    char line[128];
+    //string str;
+    //vector<string> input1;
+    //vector<vector<string> > matrix;
+    //char line[128];
 
 /*
 //store first line
@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     }
 */
 
-    
+//delete the first line
     string temp;
     input_file>>temp>>temp>>temp;
     
@@ -79,7 +79,6 @@ int main(int argc, char **argv){
 	}	
     
 
-
 /*
     while(input_file.getline(line, sizeof(line), '\n')){
         input1.push_back(line);
@@ -94,13 +93,6 @@ int main(int argc, char **argv){
     }
 */ 
 
-/*
-//print Matrix
-    for(int i=0; i<input1.size(); i++){
-        cout << input1[i] << endl;
-    }
-
-*/
 
 //check read to end of file
     if(input_file.eof())
@@ -111,8 +103,6 @@ int main(int argc, char **argv){
     input_file.close();
     output_file.close();
 
-    //output.open("file_path/filename");
-
-    //function(1000);
+    testfunction(1000);
     return 0;
 }
