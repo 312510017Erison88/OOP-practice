@@ -1,5 +1,6 @@
 CHECKCC = valgrind
 CHECKFLAGS = --leak-check=full -s --show-leak-kinds=all --track-origins=yes 
+
 all: 0811549
 
 practice.o: practice.cpp
@@ -19,6 +20,6 @@ check:
 	$(CHECKCC) $(CHECKFLAGS) ./0811549 input.in output.out
 
 clean:
-	rm -rf  0811549 *.out
+	rm -rf *.o 0811549 *.out
 
 
