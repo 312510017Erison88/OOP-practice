@@ -133,6 +133,7 @@ int main(int argc, char **argv){
 	}	
 #if point
     delete [] gradeptr;
+    gradeptr  = NULL;
     cout << "hi" << endl;
 #endif
 
