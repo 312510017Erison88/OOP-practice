@@ -9,7 +9,7 @@ delrepeat.o: delrepeat.cpp
 	g++ -o 0811549 delrepeat.o
 
 do:
-	./0811549 input1.in output.out
+	./0811549 input.in output.out
 
 diff:
 	diff -w output1.out an1 > diff1
