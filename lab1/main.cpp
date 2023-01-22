@@ -6,7 +6,8 @@
 #include <string.h>
 #include <iomanip>
 using namespace std;
-int point = 0;
+#define point  0
+#define point_2  1
 
 int main(int argc, char **argv){
     //declare a file name variable
@@ -19,7 +20,6 @@ int main(int argc, char **argv){
     
     //string str;
     //vector<string> input1;
-    //vector<vector<string> > matrix;
     //char line[128];
 
 /*
@@ -41,9 +41,11 @@ int main(int argc, char **argv){
 	string n[5];
 	int grade[5][3];
 	double stAve[5];
+    
 #if point
     int *gradeptr = new int [5 * 3];
     double *stAve_2;
+    
 #endif
 	while(input_file >> name)
 	{
@@ -52,7 +54,7 @@ int main(int argc, char **argv){
 		i++;
 	}
 
-# if point
+# if point 
     for(int k=0; k<5; k++){
         for(int j=0; j<3; j++){
             gradeptr[k*5+j] = grade[k][j];
@@ -60,15 +62,19 @@ int main(int argc, char **argv){
     }
 #endif
    
-
+# if point_2
 	for(int r=0;r<5;r++)
 	{
 		stAve[r]=double((grade[r][0]+grade[r][1]+grade[r][2]))/3;
 	}
-#if point 
-    //stAve_2 = average (gradeptr);
-    //cout << stAve_2[0]<< " " << stAve_2[3]<<" " << stAve_2[4] <<endl;
 #endif
+
+#if point 
+    stAve_2 = average (gradeptr);
+    cout << stAve_2[0]<< " " << stAve_2[3]<<" " << stAve_2[4] <<endl;
+#endif
+
+#if point_2
 	double tmp;
 	string tmp2;
 	for(int q=4; q>0; q--)
@@ -88,15 +94,46 @@ int main(int argc, char **argv){
         		}	
     		}	
 	}	
+#endif
+
+#if point
+    double tmp;
+	string tmp2;
+	for(int q=4; q>0; q--)
+	{
+   		for(int j=0; j<=q-1; j++)
+    		{	
+        		if(stAve_2[j] < stAve_2[j+1])
+        		{
+                    //change average
+            		tmp = stAve_2[j];
+          	 		stAve_2[j] = stAve_2[j+1];
+          	 		stAve_2[j+1] = tmp;
+                    //change name
+                    tmp2 = n[j];
+                    n[j] = n[j+1];
+                    n[j+1] = tmp2;
+        		}	
+    		}	
+	}	
+#endif
+
+#if point
+    for(int i=0; i<5; i++){
+        cout << "start" << endl;
+        cout << stAve_2[i] << endl;
+    }
+#endif
+
 	output_file.open(argv[2], ios::out);
 	for(int k=0; k<5; k++)
-	
     {
 		output_file << k+1 <<"." << left << setw(11)  << n[k] << right << setw(2) << fixed 
 			   << setprecision(1) << stAve[k] << endl;
 	}	
 #if point
-    delete[] gradeptr;
+    delete [] gradeptr;
+    cout << "hi" << endl;
 #endif
 
 //check read to end of file
