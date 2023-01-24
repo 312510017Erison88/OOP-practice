@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <fstream>
 #include <string.h>
 
@@ -9,6 +8,7 @@ void Printarr(char *arr, int &size);
 
 int main(int argc, char **argv){
     ifstream inputstream;
+	ofstream outputstream;
 	inputstream.open(argv[1],ios::in); 
 	
 	if(inputstream.fail()){
@@ -34,14 +34,32 @@ int main(int argc, char **argv){
 		*(arr+i) = alpha;
 	}
 	Printarr(arr, size);
-
+	deleteRepeats(arr, size);
+	Printarr(arr, size);
+	outputstream.open(argv[2], ios::out);
+	for(int i=0; i<size; i++){
+		outputstream << *(arr+i) << " " ;
+	}
+	
     inputstream.close();
+	outputstream.close();
 	delete [] arr;
+	arr = NULL;
     return 0;
 }
 
 void deleteRepeats(char *arr, int &size){
-	cout << "test" << endl;
+	for(int i=0; i<size; i++){
+		for(int j=i+1; j<size; j++){
+			if (arr[i]==arr[j]){
+				for(int k=j; k<size; k++){
+					arr[k] = arr[k+1];
+				}
+				j--;
+				size--;
+			}
+		}
+	}
 }
 
 void Printarr(char *arr, int &size){
