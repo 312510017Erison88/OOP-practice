@@ -4,6 +4,8 @@
 #include <string.h>
 
 using namespace std;
+void deleteRepeats(char *arr, int &size);
+void Printarr(char *arr, int &size);
 
 int main(int argc, char **argv){
     ifstream inputstream;
@@ -18,11 +20,33 @@ int main(int argc, char **argv){
 	while(inputstream >> alpha){
 		i++;
 	}
-
- 	inputstream.close();
     int size = i;
     cout << size << endl;
+	inputstream.close();
 
-    cout << "hi" << endl;
+	inputstream.open(argv[1], ios::in);
+	if(inputstream.fail()){
+		cout << "Input_2 file is failed.";
+	}
+
+	char *arr = new char[size];
+	for(int i=0; inputstream >> alpha; i++){
+		*(arr+i) = alpha;
+	}
+	Printarr(arr, size);
+
+    inputstream.close();
+	delete [] arr;
     return 0;
+}
+
+void deleteRepeats(char *arr, int &size){
+	cout << "test" << endl;
+}
+
+void Printarr(char *arr, int &size){
+	for(int i=0; i<size; i++){
+		cout << *(arr+i) << " ";
+	}
+	cout << endl;
 }
