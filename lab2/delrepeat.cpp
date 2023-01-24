@@ -52,7 +52,7 @@ void deleteRepeats(char *arr, int &size){
 	for(int i=0; i<size; i++){
 		for(int j=i+1; j<size; j++){
 			if (arr[i]==arr[j]){
-				for(int k=j; k<size; k++){
+				for(int k=j; k<size-1; k++){
 					arr[k] = arr[k+1];
 				}
 				j--;
