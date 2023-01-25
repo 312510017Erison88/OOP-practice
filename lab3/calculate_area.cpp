@@ -8,6 +8,10 @@ int Rectangle::calculate_area(){
     return width*height;
 }
 
+Rectangle::~Rectangle(){}
+
 int Triangle::calculate_area(){
     return (width*height)/2;
 }
+
+Triangle::~Triangle(){}
