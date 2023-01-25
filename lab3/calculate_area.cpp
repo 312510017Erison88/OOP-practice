@@ -4,3 +4,10 @@
 
 using namespace std;
 
+int Rectangle::calculate_area(){
+    return width*height;
+}
+
+int Triangle::calculate_area(){
+    return (width*height)/2;
+}
