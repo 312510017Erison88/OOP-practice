@@ -32,9 +32,9 @@ int main(int argc, char **argv){
     string name;
     int nameflag = 0;
     string n[alnum];      // store the name
-    int **data = new int*[alnum];   // each row has one name one length one width
+    int **data = new int* [alnum];   // each row has one name one length one width
     for(int i=0; i<alnum; i++){
-        data[alnum] = new int[2];
+        data[i] = new int[2];
     }
 
     while(inputstream >> name){
@@ -48,6 +48,7 @@ int main(int argc, char **argv){
         }
         nameflag++;
     }
+    
     NamePrint(n, alnum);
     DataPrint(data, alnum, 2);
 
