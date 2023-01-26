@@ -13,12 +13,13 @@ int main(int argc, char **argv){
         cout << "Input file is filed." << endl;
     }
     //input name width height
-    int alnum =0;
+    int alnum = 0;  //number of rows
     string alpha;
 
-    while(inputstream >> alpha){
+    while(getline(inputstream, alpha)){
         alnum++;
     }
+    cout << alnum << " hi" << endl;
     inputstream.close();
 
     inputstream.open(argv[1], ios::in);
@@ -30,8 +31,12 @@ int main(int argc, char **argv){
     int TriNum = 0;
     string name;
     int nameflag = 0;
-    string n[alnum];      // number of rows
-    int data[alnum][2]; // each row has one name one length one width
+    string n[alnum];      // store the name
+    int **data = new int*[alnum];   // each row has one name one length one width
+    for(int i=0; i<alnum; i++){
+        data[alnum] = new int[2];
+    }
+
     while(inputstream >> name){
         n[nameflag] = name;
         inputstream >> data[nameflag][0] >> data[nameflag][1];
@@ -43,6 +48,8 @@ int main(int argc, char **argv){
         }
         nameflag++;
     }
+    NamePrint(n, alnum);
+    DataPrint(data, alnum, 2);
 
     int size = alnum;
     int area_R[RecNum];

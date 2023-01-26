@@ -33,3 +33,7 @@ class Triangle {
         int calculate_area();
 
 };
+
+void NamePrint(string *n, int size);
+
+void DataPrint(int **data, int rowsize, int colsize);
