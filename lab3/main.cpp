@@ -19,7 +19,6 @@ int main(int argc, char **argv){
     while(getline(inputstream, alpha)){
         alnum++;
     }
-    cout << alnum << " hi" << endl;
     inputstream.close();
 
     inputstream.open(argv[1], ios::in);
@@ -44,11 +43,12 @@ int main(int argc, char **argv){
             RecNum++;
         }
         if(name=="Triangle"){
-            RecNum++;
+            TriNum++;
         }
         nameflag++;
     }
-    
+    inputstream.close();
+
     NamePrint(n, alnum);
     DataPrint(data, alnum, 2);
 
@@ -62,27 +62,35 @@ int main(int argc, char **argv){
            Rectangle InputData1(data[i][0], data[i][1]);
            area_R[c] = InputData1.calculate_area();
            c++;
-           //cout << area_R[c] << endl;
         }
         else if(n[i] == "Triangle")
         {
            Triangle InputLength2(data[i][0], data[i][1] );
            area_T[d] = InputLength2.calculate_area();
            d++;
-           //cout << area_T[d] << endl;
         }
 	}
 
-    cout << "Rectangle area:" << endl;
-	for(int j = 0; j<RecNum; j++){
-    	cout << area_R[j] <<"  ";
+    //delete the dynamic array
+    for(int i=0; i<size; i++){
+        delete [] data[i];
+    }
+    delete [] data;
+    data = NULL;
+    
+    //output file
+    ofstream outputstream;
+    outputstream.open(argv[2], ios::out);
+    outputstream << "Rectangle area:" << endl;
+    for(int j = 0; j<RecNum; j++){
+    	outputstream << area_R[j] <<"  ";
 	}
-	cout << endl;
-	cout << "Triangle area:" << endl;
+	outputstream << endl;
+	outputstream << "Triangle area:" << endl;
 	for(int k = 0; k<TriNum; k++){
-	    cout << area_T[k] <<"  ";
+	    outputstream << area_T[k] <<"  ";
 	}
+    outputstream << endl;
 
-    cout << "test!" << endl;
     return 0;
 }
