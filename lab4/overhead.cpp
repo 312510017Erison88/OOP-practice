@@ -35,7 +35,7 @@ const Complex operator*(const Complex& Ihs, const Complex& rhs){
 }
 
 const Complex operator!(const Complex& c){
-    return Complex(-c.re, -c.im);
+    return Complex(c.re, -c.im);
 }
 
 bool operator==(const Complex& Ihs, const Complex& rhs){
@@ -52,7 +52,10 @@ istream& operator>>(istream& is, const Complex& rhs){
     return is;
 }
 
+/*
+//put this implementation to overhead.h(declaration)
 ostream& operator<<(ostream& os, const Complex& rhs){
     os << rhs.real() << '+' << rhs.image() << 'i';  //use member function
     return os;
 }
+*/

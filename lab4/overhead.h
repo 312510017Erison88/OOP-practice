@@ -19,7 +19,10 @@ public:
     friend bool operator==(const Complex& Ihs, const Complex& rhs);
     friend bool operator!=(const Complex& Ihs, const Complex& rhs);
     friend istream& operator>>(istream& is, const Complex& rhs);
-    friend ostream& operator<<(ostream& os, Complex& rhs);
+    friend ostream& operator<<(ostream& os, Complex& rhs){
+        os << rhs.real() << '+' << rhs.image() << 'i';  //use member function
+        return os;
+    }
     double real() const {return re;}
     double image() const {return im;}
 

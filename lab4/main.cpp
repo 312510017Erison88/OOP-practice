@@ -11,10 +11,15 @@ int main()
 
 	cout << "input a & b" << endl;
 	cin >> a >> b;
-	cout << "a+b            = " << a+b << endl;
-	cout << "a-b            = " << a-b << endl;
-	cout << "a*b            = " << a*b << endl;
-	cout << "conjugate of a = " << !a << endl;
+	Complex plus = a+b;
+	Complex minus = a-b;
+	Complex multify = a*b;
+	Complex conjugate = !a;
+	cout << a << " " << b << endl;
+	cout << "a+b = " << plus << endl;
+	cout << "a-b = " << minus << endl;
+	cout << "a*b = " << multify << endl;
+	cout << "conjugate of a = " << conjugate << endl;
 
 	if(a == b)
 		cout << "a is equal to b" << endl;
