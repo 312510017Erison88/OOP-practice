@@ -5,7 +5,8 @@ using namespace std;
 
 int main()
 {
-	/* please do not modify contents in main() */
+/*
+	// please do not modify contents in main() 
 	Complex a, b;
 
 	cout << "input a & b" << endl;
@@ -20,5 +21,6 @@ int main()
 	if(a != b)
 		cout << "a is not equal to b" << endl;
 
+*/
 	return 0;
 }
