@@ -4,15 +4,6 @@
 
 using namespace std;
 
-/*
-//constructor
-Complex::Complex(){}
-Complex::Complex(double r=0, double i=0):re(r), im(i){}
-
-//destructor
-Complex::~Complex(){}
-*/
-
 const Complex operator+(const Complex& Ihs, const Complex& rhs){
     Complex result(Ihs);
     result.re += rhs.re;
@@ -46,9 +37,9 @@ bool operator!=(const Complex& Ihs, const Complex& rhs){
      return !((Ihs.re==rhs.re)&&(Ihs.im==rhs.im));
 }
 
-istream& operator>>(istream& is, const Complex& rhs){
-    Complex test(rhs);
-    is >> test.re >> test.im;   //use friend function
+
+istream& operator>>(istream& is, Complex& rhs){
+    is >> rhs.re >> rhs.im;   //use friend function
     return is;
 }
 

@@ -18,7 +18,7 @@ public:
     friend const Complex operator!(const Complex& c);
     friend bool operator==(const Complex& Ihs, const Complex& rhs);
     friend bool operator!=(const Complex& Ihs, const Complex& rhs);
-    friend istream& operator>>(istream& is, const Complex& rhs);
+    friend istream& operator>>(istream & is, Complex& rhs);
     friend ostream& operator<<(ostream& os, Complex& rhs){
         os << rhs.real() << '+' << rhs.image() << 'i';  //use member function
         return os;
@@ -28,7 +28,6 @@ public:
 
     ~Complex(){}
 };
-
 
 
 #endif

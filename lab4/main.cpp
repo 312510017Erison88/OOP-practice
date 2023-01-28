@@ -26,6 +26,5 @@ int main()
 	if(a != b)
 		cout << "a is not equal to b" << endl;
 
-
 	return 0;
 }
