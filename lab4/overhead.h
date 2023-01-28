@@ -10,8 +10,8 @@ private:
     double im;
 
 public:
-    Complex();
-    Complex(double r, double i);
+    Complex(){}
+    Complex(double r, double i):re(r), im(i){}
     friend const Complex operator+(const Complex& Ihs, const Complex& rhs);
     friend const Complex operator-(const Complex& Ihs, const Complex& rhs);
     friend const Complex operator*(const Complex& Ihs, const Complex& rhs);
@@ -23,14 +23,9 @@ public:
     double real() const {return re;}
     double image() const {return im;}
 
-    ~Complex();
+    ~Complex(){}
 };
 
-//constructor
-Complex::Complex(){}
-Complex::Complex(double r=0, double i=0):re(r), im(i){}
 
-//destructor
-Complex::~Complex(){}
 
 #endif
