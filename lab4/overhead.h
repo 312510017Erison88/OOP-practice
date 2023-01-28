@@ -18,7 +18,7 @@ public:
     friend const Complex operator!(const Complex& c);
     friend bool operator==(const Complex& Ihs, const Complex& rhs);
     friend bool operator!=(const Complex& Ihs, const Complex& rhs);
-    friend istream& operator>>(istream& is, Complex& rhs);
+    friend istream& operator>>(istream& is, const Complex& rhs);
     friend ostream& operator<<(ostream& os, Complex& rhs);
     double real() const {return re;}
     double image() const {return im;}

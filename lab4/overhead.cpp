@@ -13,7 +13,6 @@ Complex::Complex(double r=0, double i=0):re(r), im(i){}
 Complex::~Complex(){}
 */
 
-
 const Complex operator+(const Complex& Ihs, const Complex& rhs){
     Complex result(Ihs);
     result.re += rhs.re;
@@ -28,14 +27,32 @@ const Complex operator-(const Complex& Ihs, const Complex& rhs){
     return result;
 }
 
+const Complex operator*(const Complex& Ihs, const Complex& rhs){
+    Complex result;
+    result.re = (Ihs.re*rhs.re) - (Ihs.im*rhs.im);
+    result.im = (Ihs.im*rhs.re) + (Ihs.re*rhs.im);
+    return result;
+}
+
+const Complex operator!(const Complex& c){
+    return Complex(-c.re, -c.im);
+}
+
+bool operator==(const Complex& Ihs, const Complex& rhs){
+    return ((Ihs.re==rhs.re)&&(Ihs.im==rhs.im));
+}
+
+bool operator!=(const Complex& Ihs, const Complex& rhs){
+     return !((Ihs.re==rhs.re)&&(Ihs.im==rhs.im));
+}
 
 istream& operator>>(istream& is, const Complex& rhs){
-    is >> rhs.real() >> rhs.image();
+    Complex test(rhs);
+    is >> test.re >> test.im;   //use friend function
     return is;
 }
 
-
 ostream& operator<<(ostream& os, const Complex& rhs){
-    os << rhs.real() << '+' << rhs.image() << 'i';
+    os << rhs.real() << '+' << rhs.image() << 'i';  //use member function
     return os;
 }
