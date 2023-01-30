@@ -43,10 +43,10 @@ istream& operator>>(istream& is, Complex& rhs){
     return is;
 }
 
-/*
+
 //put this implementation to overhead.h(declaration)
-ostream& operator<<(ostream& os, const Complex& rhs){
+ostream& operator<<(ostream& os, Complex& rhs){
     os << rhs.real() << '+' << rhs.image() << 'i';  //use member function
     return os;
 }
-*/
+
