@@ -3,6 +3,10 @@
 
 using namespace std;
 
+Employee::Employee(){}
+
+Employee::~Employee(){}
+
 string Employee::full_name() {
             return string(family_name)+string(first_name);
         }

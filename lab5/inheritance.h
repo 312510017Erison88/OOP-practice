@@ -7,13 +7,23 @@ using namespace std;
 
 // base class
 class Employee{
-    string first_name;
-    string family_name;
-    char middle_initial;
-    int hiring_date;
-    short department;
+    private:
+        string first_name;
+        string family_name;
+        char middle_initial;
+        int hiring_date;
+        short department;
 
     public:
+        // constructor
+        Employee();
+        Employee(string first, string family){
+                first_name = first;
+                family_name = family;
+        }
+        // destructor
+        ~Employee();
+
         string full_name();
         void printname();
 
@@ -26,7 +36,6 @@ class Manager: public Employee{
     short level;
     
 };
-
 
 
 #endif
