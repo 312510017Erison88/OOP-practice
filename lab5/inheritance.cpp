@@ -2,3 +2,4 @@
 #include "inheritance.h"
 
 using namespace std;
+
