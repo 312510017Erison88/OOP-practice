@@ -14,13 +14,8 @@ class Employee{
     short department;
 
     public:
-        string full_name(){
-            return string(family_name)+string(first_name);
-        }
-
-        void printname() {
-            cout << "Name is " << full_name() << endl;
-        }
+        string full_name();
+        void printname();
 
 };
 
