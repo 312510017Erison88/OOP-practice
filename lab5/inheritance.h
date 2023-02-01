@@ -32,9 +32,15 @@ class Employee{
 // derived class
 // all the variable belong to  Employee, the manager also has them
 class Manager: public Employee{
-    Employee* group[100];
-    short level;
-    
+    private:
+        //Employee* group[100];
+        short level;
+
+    public:
+        //constructor
+        Manager();
+        //destructor
+        ~Manager();
 };
 
 
