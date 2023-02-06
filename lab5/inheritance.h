@@ -7,12 +7,18 @@ using namespace std;
 
 // base class
 class Employee{
+    friend ostream& operator<<(ostream&, const Employee&);
+
     private:
         string first_name;
         string family_name;
-        char middle_initial;
-        int hiring_date;
-        short department;
+        double salary;
+        double yearOfService;
+
+    protected:
+        string get_name();
+        double get_year();
+        void set_salary(double _salary);
 
     public:
         // constructor
@@ -24,13 +30,15 @@ class Employee{
         // destructor
         ~Employee();
 
+        //method
+        double get_salary();
         string full_name();
         void printname();
 
 };
 
 // derived class
-// all the variable belong to  Employee, the manager also has them
+// all the variable belong to Employee, the manager also has them
 class Manager: public Employee{
     private:
         //Employee* group[100];

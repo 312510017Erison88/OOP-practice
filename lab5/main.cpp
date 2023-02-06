@@ -43,12 +43,12 @@ int main(int argc, char **argv){
     }
 
 
-    Employee object(" hi", "good");
+    Employee object(" hi", "Erison");
     string test;
     
     test = object.full_name();
     object.printname();
-    cout << "test" << endl;
+    cout << "final line" << endl;
     
     return 0;
 }
