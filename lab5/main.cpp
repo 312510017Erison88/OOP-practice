@@ -6,6 +6,8 @@
 
 using namespace std;
 
+#define BASE 20000.0
+
 int main(int argc, char **argv){
     // read the input file
     ifstream inputstream;
@@ -20,7 +22,7 @@ int main(int argc, char **argv){
     string name_buffer;
     vector <string> name;
     vector <char> classname;
-    vector <float> month;
+    vector <float> year;
     
     //name class month
     while(inputstream >> name_buffer){
@@ -35,20 +37,32 @@ int main(int argc, char **argv){
         inStr >> c >> m;
         name.push_back(name_buffer);
         classname.push_back(c);
-        month.push_back(m);
+        year.push_back(m);
     }
     //print
     for(int i=0; i<name.size(); i++){
-        cout << name[i] << " " << classname[i] << " " << month[i] << endl;
+        cout << name[i] << " " << classname[i] << " " << year[i] << endl;
     }
 
+    // calculate salary
+    for(int i=0; i<classname.size(); i++){
+        if(classname[i]=='M'){
+            Employee employee;
+            employee.set_year(year[i]);
+            double yearofservice = employee.get_year();
+            employee.set_name(name[i]);
+            employee.set_salary(BASE + yearofservice*1000);
+            cout << employee.get_name() << " " << employee.get_salary() << endl; 
+        }
+        if(classname[i]=='E'){
+            Employee employee;
+            employee.set_year(year[i]);
+            double yearofservice = employee.get_year();
+            employee.set_name(name[i]);
+            employee.set_salary(BASE +15000+ yearofservice*5000);
+            cout << employee.get_name() << " " << employee.get_salary() << endl; 
+        }
+    }
 
-    Employee object(" hi", "Erison");
-    string test;
-    
-    test = object.full_name();
-    object.printname();
-    cout << "final line" << endl;
-    
     return 0;
 }

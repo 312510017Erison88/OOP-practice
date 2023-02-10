@@ -16,28 +16,28 @@ Manager::Manager(){}
 //destructor
 Manager::~Manager(){}
 
-string Employee::get_name(){
-    return first_name;
+void Employee::set_year(double _year){
+    yearOfService = _year;
 }
 
 double Employee::get_year(){
     return yearOfService;
 }
 
+void Employee::set_name(string _name){
+    first_name = _name;
+}
+
 void Employee::set_salary(double _salary){
     salary = _salary;
 }
 
-double Employee::get_salary(){
-    return salary;
+string Employee::get_name(){
+    return first_name;
 }
 
-string Employee::full_name(){
-            return string(family_name)+string(first_name);
-        }
-
-void Employee::printname(){
-    cout << "Name is " << full_name() << endl;
+double Employee::get_salary(){
+    return salary;
 }
 
 /* function of operator << */

@@ -11,29 +11,27 @@ class Employee{
 
     private:
         string first_name;
-        string family_name;
         double salary;
         double yearOfService;
-
-    protected:
-        string get_name();
-        double get_year();
-        void set_salary(double _salary);
-
+        
     public:
         // constructor
         Employee();
-        Employee(string first, string family){
-                first_name = first;
-                family_name = family;
+        /*
+        Employee(string name){
+            first_name = name;
         }
+        */
         // destructor
         ~Employee();
 
         //method
+        void set_name(string name);
+        void set_year(double _year);
+        void set_salary(double _salary);
+        string get_name();
+        double get_year();
         double get_salary();
-        string full_name();
-        void printname();
 
 };
 
