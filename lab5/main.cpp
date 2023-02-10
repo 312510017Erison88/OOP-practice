@@ -39,11 +39,19 @@ int main(int argc, char **argv){
         classname.push_back(c);
         year.push_back(m);
     }
+    inputstream.close();
+
     //print
     for(int i=0; i<name.size(); i++){
         cout << name[i] << " " << classname[i] << " " << year[i] << endl;
     }
 
+    //open output file
+    ofstream outputstream;
+    outputstream.open(argv[2], ios::out);
+    if(outputstream.fail()){
+        cout << "Output file is failed." << endl; 
+    }
     // calculate salary
     for(int i=0; i<classname.size(); i++){
         if(classname[i]=='M'){
@@ -52,7 +60,8 @@ int main(int argc, char **argv){
             double yearofservice = employee.get_year();
             employee.set_name(name[i]);
             employee.set_salary(BASE + yearofservice*1000);
-            cout << employee.get_name() << " " << employee.get_salary() << endl; 
+            //outputstream << employee.get_name() << " " << employee.get_salary() << endl;
+            outputstream << employee; 
         }
         if(classname[i]=='E'){
             Employee employee;
@@ -60,9 +69,11 @@ int main(int argc, char **argv){
             double yearofservice = employee.get_year();
             employee.set_name(name[i]);
             employee.set_salary(BASE +15000+ yearofservice*5000);
-            cout << employee.get_name() << " " << employee.get_salary() << endl; 
+            //outputstream << employee.get_name() << " " << employee.get_salary() << endl; 
+            outputstream << employee; 
         }
     }
+    outputstream.close();
 
     return 0;
 }

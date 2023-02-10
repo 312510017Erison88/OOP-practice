@@ -42,6 +42,6 @@ double Employee::get_salary(){
 
 /* function of operator << */
 ostream& operator<<(ostream& os, const Employee& rhs){
-    os << setw(20)<< left<< rhs.first_name << rhs.salary << "  "<< setw(5)<< rhs.yearOfService << setw(7)<< right<< rhs.salary;
+    os << setw(8) << left<< rhs.first_name << "  "<< setw(5) << rhs.yearOfService << setw(7) << right << rhs.salary << endl;
     return os;
 }
