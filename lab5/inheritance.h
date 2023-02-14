@@ -17,11 +17,7 @@ class Employee{
     public:
         // constructor
         Employee();
-        /*
-        Employee(string name){
-            first_name = name;
-        }
-        */
+        
         // destructor
         ~Employee();
 
